@@ -23,7 +23,7 @@ const Home = () => {
         play
         duration={1.5}
         delay={1}
-        start={{ transform: "translateY(550px)" }}
+        start={{ transform: "translateX(1050px)" }}
         end={{ transform: "translate(0px)" }}
       >
         <div className="home__contact-me">
