@@ -6,6 +6,7 @@
   align-items: center;
   font-size: 1.2rem;
   position: sticky;
+  z-index: 2;
 }
 
 .navbar__container {
@@ -75,7 +76,7 @@
   }
 
   .navbar__container-menu.active {
-    background: var(--green-theme-nav-background-color);
+    background: var(--blue-theme-nav-background-color);
     left: 0px;
     opacity: 1;
   }
