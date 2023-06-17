@@ -6,6 +6,7 @@ import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 import "./navbar.css";
+import Logo from "../../assets/logo.png";
 
 const data = [
   {
@@ -42,7 +43,7 @@ const NavBar = () => {
       <nav className="navbar">
         <div className="navbar__container">
           <Link to={"/"} className="navbar__container-logo">
-            HIATonD
+            <img src={Logo} alt="Logo" />
           </Link>
         </div>
         <ul className={`navbar__container-menu ${toggleIcon ? "active" : ""}`}>
