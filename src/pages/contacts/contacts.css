@@ -1,0 +1,91 @@
+.contact__content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact__content__header {
+  color: var(--text-header-theme-main-color);
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1em;
+  letter-spacing: 0.5px;
+  position: relative;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+.contact__content-form {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.contact__content-form-controls {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__content-form-controls div {
+  position: relative;
+}
+
+.inputName,
+.inputEmail,
+.inputDes {
+  width: 100%;
+  border: 2px solid var(--text-header-theme-main-color);
+  padding: 16px 12px;
+  transition: all 0.5s ease;
+  position: relative;
+  background-color: transparent;
+  color: var(--white-theme-sub-text-color);
+}
+
+.nameLabel,
+.emailLabel,
+.desLabel {
+  font-weight: 500;
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  transition: all 0.2s ease;
+  color: var(--white-theme-sub-text-color);
+  font-size: 16px;
+}
+
+.inputName:focus,
+.inputEmail:focus,
+.inputDes:focus {
+  outline: none;
+}
+
+.inputName:focus + .nameLabel,
+.inputEmail:focus + .emailLabel,
+.inputDes:focus + .desLabel {
+  font-size: 18px;
+  top: -25px;
+  left: 0;
+}
+
+.contact__content-form button {
+  background-color: var(--text-header-theme-main-color);
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white-theme-sub-text-color);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__content-form {
+    width: 100%;
+  }
+}

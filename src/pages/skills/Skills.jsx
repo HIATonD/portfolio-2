@@ -1,14 +1,44 @@
 import PageHeader from "../../components/pageHeader/PageHeader";
 
-import { BsInfoCircleFill } from "react-icons/bs";
+import { Animate } from "react-simple-animate";
+
+import { BsFillLightningFill } from "react-icons/bs";
+
+import { skillData } from "./skilldata.js";
+
+import "./skills.css";
 
 const Skills = () => {
   return (
-    <section id="about" className="about">
+    <section id="skill" className="skill">
       <PageHeader
         headerText="My Skills"
-        icon={<BsInfoCircleFill size={40} />}
+        icon={<BsFillLightningFill size={40} />}
       />
+      <div className="skill__content-wrapper">
+        {skillData.map((item, index) => (
+          <div key={index} className="skill__content-wrapper--inner-content">
+            <Animate
+              play
+              duration={1}
+              delay={0.3}
+              start={{ transform: "translateX(-200px)" }}
+              end={{ transform: "translateX(0px)" }}
+            >
+              <h3 className="skill__content-wrapper--inner-content__context">
+                {item.label}
+              </h3>
+              <div>
+                {item.data.map((skill, index) => (
+                  <div key={index} className="text-wrapper">
+                    <p>{skill.skillName}</p>
+                  </div>
+                ))}
+              </div>
+            </Animate>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
