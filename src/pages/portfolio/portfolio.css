@@ -7,6 +7,9 @@
 }
 
 .portfolio__content-wrapper .title {
-  font-size: 32px;
   color: var(--text-header-theme-main-color);
+  width: 100%;
+  font-size: 32px;
+  word-wrap: break-word;
+  text-align: center;
 }
