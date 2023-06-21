@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import PageHeader from "../../components/pageHeader/PageHeader";
 import { Animate } from "react-simple-animate";
 
@@ -6,6 +9,28 @@ import { BsChatRightTextFill } from "react-icons/bs";
 import "./contacts.css";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_vcy94ue",
+        "template_spghhrh",
+        form.current,
+        "g3Zqxunvf1OciZiO7"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section id="about" className="about">
       <PageHeader
@@ -29,10 +54,19 @@ const Contact = () => {
           start={{ transform: "translateX(1050px)" }}
           end={{ transform: "translateX(0px)" }}
         >
-          <form className="contact__content-form">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="contact__content-form"
+          >
             <div className="contact__content-form-controls">
               <div>
-                <input required type="text" name="name" className="inputName" />
+                <input
+                  required
+                  type="text"
+                  name="user_name"
+                  className="inputName"
+                />
                 <label htmlFor="name" className="nameLabel">
                   Name
                 </label>
@@ -41,7 +75,7 @@ const Contact = () => {
                 <input
                   required
                   type="email"
-                  name="email"
+                  name="user_email"
                   className="inputEmail"
                 />
                 <label htmlFor="email" className="emailLabel">
@@ -52,7 +86,7 @@ const Contact = () => {
                 <textarea
                   required
                   type="text"
-                  name="des"
+                  name="message"
                   className="inputDes"
                   rows={5}
                 />
@@ -61,7 +95,9 @@ const Contact = () => {
                 </label>
               </div>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" value="Send">
+              Submit
+            </button>
           </form>
         </Animate>
       </div>

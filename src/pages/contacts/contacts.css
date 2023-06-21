@@ -24,7 +24,7 @@
 }
 
 .contact__content-form-controls {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -39,6 +39,7 @@
 .inputDes {
   width: 100%;
   border: 2px solid var(--text-header-theme-main-color);
+  margin: 0 0 16px 0;
   padding: 16px 12px;
   transition: all 0.5s ease;
   position: relative;
@@ -82,6 +83,11 @@
   font-weight: 600;
   color: var(--white-theme-sub-text-color);
   cursor: pointer;
+}
+
+.contact__content-form button:hover {
+  background-color: var(--white-theme-sub-text-color);
+  color: var(--text-header-theme-main-color);
 }
 
 @media screen and (max-width: 768px) {

@@ -3,7 +3,7 @@ import PageHeader from "../../components/pageHeader/PageHeader";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { Animate } from "react-simple-animate";
 
-import Imgblot from "../../assets/Image_AI__113-scaled.jpg";
+import imgBlog from "../../assets/profile-img.png";
 
 import "./about.css";
 
@@ -54,7 +54,7 @@ const About = () => {
           </Animate>
         </div>
         <div className="about__content-service">
-          <img src={Imgblot} alt="Image" className="img__about" />
+          <img src={imgBlog} alt="Image" className="img__about" />
         </div>
       </div>
     </section>
