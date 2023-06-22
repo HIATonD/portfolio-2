@@ -89,4 +89,8 @@
     color: var(--text-header-theme-main-color);
     padding-right: 20px;
   }
+
+  .navbar__container-menu--item::after {
+    display: none;
+  }
 }
