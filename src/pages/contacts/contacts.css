@@ -19,11 +19,12 @@
 }
 
 .contact__content-form {
-  width: 300px;
+  width: 600px;
   margin-top: 30px;
 }
 
 .contact__content-form-controls {
+  width: 100%;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -92,6 +93,12 @@
 
 @media screen and (max-width: 768px) {
   .contact__content-form {
-    width: 100%;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 331px) {
+  .contact__content-form {
+    width: 200px;
   }
 }

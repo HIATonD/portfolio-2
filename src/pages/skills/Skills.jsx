@@ -20,9 +20,9 @@ const Skills = () => {
           <div key={index} className="skill__content-wrapper--inner-content">
             <Animate
               play
-              duration={1}
-              delay={0.3}
-              start={{ transform: "translateX(-200px)" }}
+              duration={0.6}
+              delay={0.2}
+              start={{ transform: "translateY(800px)" }}
               end={{ transform: "translateX(0px)" }}
             >
               <h3 className="skill__content-wrapper--inner-content__context">
