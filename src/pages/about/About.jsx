@@ -9,7 +9,7 @@ import "./about.css";
 
 const personalDetails = [
   { label: "Name:", value: "Tran Ton" },
-  { label: "Age:", value: "20" },
+  { label: "Age:", value: "21" },
   { label: "Address:", value: "HCM City, Viet Nam" },
   { label: "Email:", value: "tontran788@gmail.com" },
   { label: "Contact No:", value: "(+84) 33 7703 026" },
