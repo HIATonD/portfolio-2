@@ -18,10 +18,13 @@
 }
 
 .about__content-wrapper p {
-  color: var(--white-theme-sub-text-color);
   font-size: 1.8rem;
+  font-weight: 500;
   line-height: 1.65;
   padding-bottom: 20px;
+  background: -webkit-linear-gradient(#f8ff95, #6528f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   border-bottom: 2px dashed var(--text-header-theme-main-color);
 }
 
@@ -34,8 +37,7 @@
   margin-bottom: 15px;
 }
 
-.about__content-wrapper ul > li span.title,
-span.value {
+.about__content-wrapper ul > li span.title {
   font-size: 18px;
   line-height: 2rem;
   letter-spacing: 0.5px;
@@ -45,6 +47,19 @@ span.value {
   text-align: justify;
   padding-bottom: 5px;
   color: var(--white-theme-sub-text-color);
+}
+
+span.value {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  text-align: justify;
+  padding-bottom: 5px;
+  color: #feffac;
 }
 
 .about__content-service {
