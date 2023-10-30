@@ -2,7 +2,7 @@ export default {
   autoPlay: true,
   background: {
     color: {
-      value: "#000814",
+      value: "#000",
     },
     image: "",
     position: "",
@@ -28,12 +28,12 @@ export default {
   },
   detectRetina: true,
   duration: 0,
-  fpsLimit: 120,
+  fpsLimit: 240,
   interactivity: {
     detectsOn: "window",
     events: {
       onClick: {
-        enable: true,
+        enable: false,
         mode: [],
       },
       onDiv: {
@@ -43,8 +43,8 @@ export default {
         type: "circle",
       },
       onHover: {
-        enable: true,
-        mode: "trail",
+        enable: false,
+        mode: [],
         parallax: {
           enable: false,
           force: 2,
@@ -57,6 +57,11 @@ export default {
       },
     },
     modes: {
+      trail: {
+        delay: 1,
+        pauseOnStop: false,
+        quantity: 1,
+      },
       attract: {
         distance: 200,
         duration: 0.4,
@@ -122,44 +127,6 @@ export default {
       slow: {
         factor: 3,
         radius: 200,
-      },
-      trail: {
-        delay: 0.005,
-        pauseOnStop: true,
-        quantity: 5,
-        particles: {
-          color: {
-            value: "#ff0000",
-            animation: {
-              enable: true,
-              speed: 400,
-              sync: true,
-            },
-          },
-          collisions: {
-            enable: false,
-          },
-          links: {
-            enable: false,
-          },
-          move: {
-            outModes: {
-              default: "destroy",
-            },
-            speed: 2,
-          },
-          size: {
-            value: 5,
-            animation: {
-              enable: true,
-              speed: 5,
-              minimumValue: 1,
-              sync: true,
-              startValue: "min",
-              destroy: "max",
-            },
-          },
-        },
       },
       light: {
         area: {
@@ -229,16 +196,16 @@ export default {
       },
     },
     color: {
-      value: "#ff0000",
+      value: "#fff",
       animation: {
         h: {
           count: 0,
-          enable: true,
+          enable: false,
           offset: 0,
-          speed: 50,
+          speed: 1,
           delay: 0,
           decay: 0,
-          sync: false,
+          sync: true,
         },
         s: {
           count: 0,
@@ -286,10 +253,10 @@ export default {
       drift: 0,
       enable: true,
       gravity: {
-        acceleration: 9.81,
-        enable: false,
-        inverse: false,
-        maxSpeed: 50,
+        acceleration: 15,
+        enable: true,
+        inverse: true,
+        maxSpeed: 100,
       },
       path: {
         clamp: true,
@@ -304,57 +271,60 @@ export default {
         options: {},
       },
       outModes: {
-        default: "out",
-        bottom: "out",
-        left: "out",
-        right: "out",
-        top: "out",
+        default: "destroy",
+        bottom: "destroy",
+        left: "destroy",
+        right: "destroy",
+        top: "none",
       },
       random: false,
       size: false,
-      speed: 2,
+      speed: {
+        min: 10,
+        max: 20,
+      },
       spin: {
         acceleration: 0,
         enable: false,
       },
       straight: false,
       trail: {
-        enable: false,
+        enable: true,
         length: 10,
-        fill: {},
+        fill: {
+          color: {
+            value: "#000",
+          },
+        },
       },
       vibrate: false,
       warp: false,
     },
     number: {
       density: {
-        enable: true,
+        enable: false,
         width: 1920,
         height: 1080,
       },
       limit: 0,
-      value: 100,
+      value: 0,
     },
     opacity: {
       random: {
-        enable: true,
-        minimumValue: 0.3,
+        enable: false,
+        minimumValue: 0.1,
       },
-      value: {
-        min: 0.3,
-        max: 0.8,
-      },
+      value: 1,
       animation: {
         count: 0,
-        enable: true,
-        speed: 0.5,
+        enable: false,
+        speed: 2,
         decay: 0,
         delay: 0,
         sync: false,
         mode: "auto",
         startValue: "random",
         destroy: "none",
-        minimumValue: 0.3,
       },
     },
     reduceDuplicates: false,
@@ -373,32 +343,63 @@ export default {
       close: true,
       fill: true,
       options: {},
-      type: "circle",
+      type: "line",
     },
     size: {
       random: {
-        enable: true,
+        enable: false,
         minimumValue: 1,
       },
       value: {
-        min: 1,
-        max: 3,
+        min: 0.1,
+        max: 50,
       },
       animation: {
         count: 0,
         enable: true,
-        speed: 3,
+        speed: 90,
         decay: 0,
         delay: 0,
-        sync: false,
+        sync: true,
         mode: "auto",
-        startValue: "random",
-        destroy: "none",
-        minimumValue: 1,
+        startValue: "max",
+        destroy: "min",
       },
     },
     stroke: {
-      width: 0,
+      width: 1,
+      color: {
+        value: "#ffffff",
+        animation: {
+          h: {
+            count: 0,
+            enable: false,
+            offset: 0,
+            speed: 1,
+            delay: 0,
+            decay: 0,
+            sync: true,
+          },
+          s: {
+            count: 0,
+            enable: false,
+            offset: 0,
+            speed: 1,
+            delay: 0,
+            decay: 0,
+            sync: true,
+          },
+          l: {
+            count: 0,
+            enable: false,
+            offset: 0,
+            speed: 1,
+            delay: 0,
+            decay: 0,
+            sync: true,
+          },
+        },
+      },
     },
     zIndex: {
       random: {
@@ -410,43 +411,9 @@ export default {
       sizeRate: 1,
       velocityRate: 1,
     },
-    life: {
-      count: 0,
-      delay: {
-        random: {
-          enable: false,
-          minimumValue: 0,
-        },
-        value: 0,
-        sync: false,
-      },
-      duration: {
-        random: {
-          enable: false,
-          minimumValue: 0.0001,
-        },
-        value: 0,
-        sync: false,
-      },
-    },
-    rotate: {
-      random: {
-        enable: false,
-        minimumValue: 0,
-      },
-      value: 0,
-      animation: {
-        enable: false,
-        speed: 0,
-        decay: 0,
-        sync: false,
-      },
-      direction: "clockwise",
-      path: false,
-    },
     destroy: {
       bounds: {},
-      mode: "none",
+      mode: "split",
       split: {
         count: 1,
         factor: {
@@ -454,20 +421,84 @@ export default {
             enable: false,
             minimumValue: 0,
           },
-          value: 3,
+          value: 0.333333,
         },
         rate: {
           random: {
             enable: false,
             minimumValue: 0,
           },
-          value: {
-            min: 4,
-            max: 9,
-          },
+          value: 100,
         },
         sizeOffset: true,
-        particles: {},
+        particles: {
+          stroke: {
+            width: 0,
+          },
+          color: {
+            value: ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"],
+          },
+          number: {
+            value: 0,
+          },
+          collisions: {
+            enable: false,
+          },
+          opacity: {
+            value: {
+              min: 0.1,
+              max: 1,
+            },
+            animation: {
+              enable: true,
+              speed: 0.7,
+              sync: false,
+              startValue: "max",
+              destroy: "min",
+            },
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            value: {
+              min: 1,
+              max: 2,
+            },
+            animation: {
+              enable: true,
+              speed: 5,
+              count: 1,
+              sync: false,
+              startValue: "min",
+              destroy: "none",
+            },
+          },
+          life: {
+            count: 1,
+            duration: {
+              value: {
+                min: 1,
+                max: 2,
+              },
+            },
+          },
+          move: {
+            decay: 0.05,
+            enable: true,
+            gravity: {
+              enable: true,
+              inverse: false,
+              acceleration: 5,
+            },
+            speed: {
+              min: 5,
+              max: 10,
+            },
+            direction: "none",
+            outModes: "destroy",
+          },
+        },
       },
     },
     roll: {
@@ -518,6 +549,40 @@ export default {
         move: 10,
       },
     },
+    life: {
+      count: 1,
+      delay: {
+        random: {
+          enable: false,
+          minimumValue: 0,
+        },
+        value: 0,
+        sync: false,
+      },
+      duration: {
+        random: {
+          enable: false,
+          minimumValue: 0.0001,
+        },
+        value: 0,
+        sync: false,
+      },
+    },
+    rotate: {
+      random: {
+        enable: false,
+        minimumValue: 0,
+      },
+      value: 0,
+      animation: {
+        enable: false,
+        speed: 0,
+        decay: 0,
+        sync: false,
+      },
+      direction: "clockwise",
+      path: true,
+    },
     orbit: {
       animation: {
         count: 0,
@@ -541,11 +606,11 @@ export default {
     links: {
       blink: false,
       color: {
-        value: "random",
+        value: "#fff",
       },
       consent: false,
       distance: 100,
-      enable: true,
+      enable: false,
       frequency: 1,
       opacity: 1,
       shadow: {
@@ -582,5 +647,38 @@ export default {
   style: {},
   themes: [],
   zLayers: 100,
-  emitters: [],
+  emitters: {
+    autoPlay: true,
+    fill: true,
+    life: {
+      wait: false,
+      count: 0,
+      delay: 0.1,
+      duration: 0.1,
+    },
+    rate: {
+      quantity: 1,
+      delay: 0.15,
+    },
+    shape: "square",
+    startCount: 0,
+    size: {
+      mode: "percent",
+      height: 0,
+      width: 100,
+    },
+    direction: "top",
+    particles: {},
+    position: {
+      x: 50,
+      y: 100,
+    },
+  },
+  motion: {
+    disable: false,
+    reduce: {
+      factor: 4,
+      value: true,
+    },
+  },
 };
