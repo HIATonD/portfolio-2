@@ -15,12 +15,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_vcy94ue",
-        "template_spghhrh",
-        form.current,
-        "g3Zqxunvf1OciZiO7"
-      )
+      .sendForm("service_vcy94ue", "template_spghhrh", form.current, "")
       .then(
         (result) => {
           console.log(result.text);
